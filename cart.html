@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Monsieur+La+Doulaise&family=Parisienne&family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=La+Belle+Aurore&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=La+Belle+Aurore&family=Sacramento&family=WindSong&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Monsieur+La+Doulaise&family=Parisienne&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=EB+Garamond&family=La+Belle+Aurore&family=Sacramento&family=WindSong&display=swap" rel="stylesheet">
+    <linkhref="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+        rel="stylesheet"
+      />
+    <title>payment page</title>
+	<style>
+	body {
+    font-family: Arial, sans-serif;
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+	
+}
+body{
+  background-image:url('https://images.squarespace-cdn.com/content/v1/5b097b4a4cde7ab1c2125706/8f6e77d0-f9b1-4d7f-bb1e-22fbb06d3d71/Cathie+Hong_+Forest_17.jpg?format=1500w');
+}
+.payment-container {
+    width:400px;
+    
+    position:absolute;
+    left:500px;
+    top:100px;
+    padding: 20px;
+
+    background-color:white;
+
+    border-radius: 40px;
+    
+
+}
+h1{
+    font-family: 'WindSong', cursive;
+            font-size:30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid Tan;
+    border-radius:20px;
+}
+
+button {
+    padding: 10px;
+    background-color:Tan;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:powderblue;
+}
+.img{
+            width:200px;
+            height:90px;
+}
+.wrapper{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    min-height: 20vh; 
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: /linear-gradient(rgba(39,39,39, 0.9), transparent);/rgb(100,76,52);
+    z-index: 100;
+}
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
+@media only screen and (max-width: 786px){
+    .nav-button{
+        display: none;
+    }
+    .nav-menu.responsive{
+        top: 100px;
+    }
+    .nav-menu{
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(20px);
+        transition: .3s;
+    }
+    .nav-menu ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-menu-btn{
+        display: block;
+    }
+    .nav-menu-btn i{
+        font-size: 25px;
+        color: #fff;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .nav-menu-btn i:hover{
+        background: rgba(255, 255, 255, 0.15);
+    }
+	.txt{
+		display: none;
+	}
+}
+@media only screen and (max-width: 540px) {
+    .wrapper{
+        min-height: 20vh;
+    }
+}
+  /* Add responsive design */
+        @media (max-width: 600px) {
+            .payment-container {
+                max-width: 90%;
+                margin: 10px;
+                padding: 10px;
+            }
+        }
+
+	</style>
+</head>
+<body>
+  
+    <div class="payment-container">
+        <center>
+            <img src="logo1.jpg" alt="Side Image" class="img"></center>
+        <h1>Product Payment</h1>
+        <form id="payment-form">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+
+            <label for="expiry">Expiration Date:</label>
+            <input type="text" id="expiry" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="123" required>
+<br>
+            <button type="submit" id="submit-button">Submit Payment</button>
+        </form>
+    </div>
+   
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('payment-form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // You can add payment processing logic here
+        // For a real payment, you would need to use a payment gateway such as Stripe or PayPal.
+        // Here, we'll just simulate a successful payment.
+        alert('Payment Successful!');
+		window.location.href="cart.html";
+    });
+});
+
+
+</script>
+<script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
+</script>   
+
+</body>
+</html>

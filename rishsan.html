@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Monsieur+La+Doulaise&family=Parisienne&family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=La+Belle+Aurore&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=La+Belle+Aurore&family=Sacramento&family=WindSong&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Monsieur+La+Doulaise&family=Parisienne&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=EB+Garamond&family=La+Belle+Aurore&family=Sacramento&family=WindSong&display=swap" rel="stylesheet">
+    <linkhref="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+        rel="stylesheet"
+      />
+   <title>Love & Aesthetics Form</title>
+    
+    <style>
+        /* Add your CSS styles here */
+        body{
+  background-image:url('https://images.squarespace-cdn.com/content/v1/5b097b4a4cde7ab1c2125706/8f6e77d0-f9b1-4d7f-bb1e-22fbb06d3d71/Cathie+Hong_+Forest_17.jpg?format=1500w');
+}
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            background-color:white;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            position:absolute;
+            top:100px;
+            left:600px;
+            
+           
+        }
+
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+        }
+
+        .container input:valid {
+            border-color: #0a0;
+        }
+
+        .container input:invalid {
+            border-color:Tan;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            background-color:Tan;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color:#C4D7B2;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        #loginContainer {
+            display: none;
+        }
+        h2{
+            font-family: 'WindSong', cursive;
+            font-size:30px;
+   
+        }
+        .img{
+            width:200px;
+            height:90px;
+}
+@media (max-width: 768px) {
+        /* Add styles for screens with a maximum width of 768px */
+        .container {
+            width: 80%; /* Adjust the width for smaller screens */
+            left: 5%; /* Center the container on smaller screens */
+            align-content: center;
+        }
+    }
+    </style>
+</head>
+<body>
+    <center>
+    <div class="container-parent">
+<center>
+        <div class="container" id="signupContainer">
+            <center>
+                <img src="logo1.jpg" alt="Side Image" class="img"></center>
+            <h2>Sign Up</h2>
+            <input type="text" id="signupUsername" placeholder="Username" required>
+            <input type="text" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <button onclick="signup()">Sign Up</button>
+            <p id="errorMessage" class="error"></p>
+            <p>Already a user? <a href="#" onclick="showLoginContainer()">Login</a></p>
+        </div>
+
+        <div class="container" id="loginContainer">
+            <center>
+                <img src="logo1.jpg" alt="Side Image" class="img"></center>
+            <h2>Login</h2>
+            <input type="text" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p id="loginErrorMessage" class="error"></p>
+            <p>Not a user? <a href="#" onclick="showSignupContainer()">Sign Up</a></p>
+        </div>
+        </center>
+    </div>
+</center>
+    <script>
+        var users = [];
+
+        function signup() {
+            var signupUsername = document.getElementById('signupUsername').value;
+            var signupEmail = document.getElementById('signupEmail').value;
+            var signupPassword = document.getElementById('signupPassword').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var usernamePattern = /^[A-Za-z]+$/;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (!usernamePattern.test(signupUsername)) {
+                document.getElementById('errorMessage').textContent = 'Username must contain only alphabets.';
+            } else if (!emailPattern.test(signupEmail)) {
+                document.getElementById('errorMessage').textContent = 'Enter a valid email address.';
+            } else if (signupPassword.length < 8) {
+                document.getElementById('errorMessage').textContent = 'Password must have at least 8 characters.';
+            } else if (signupPassword !== confirmPassword) {
+                document.getElementById('errorMessage').textContent = 'Passwords do not match.';
+            } else if (users.some(user => user.email === signupEmail)) {
+                document.getElementById('errorMessage').textContent = 'Email already exists. Please log in.';
+            } else {
+                users.push({ username: signupUsername, email: signupEmail, password: signupPassword });
+                document.getElementById('errorMessage').textContent = 'Sign Up successful. You can now log in.';
+                showLoginContainer(); // Show the login form
+            }
+        }
+
+        function showLoginContainer() {
+            document.getElementById('signupContainer').style.display = 'none';
+            document.getElementById('loginContainer').style.display = 'block';
+        }
+
+        function showSignupContainer() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('signupContainer').style.display = 'block';
+        }
+
+        function login() {
+            var loginEmail = document.getElementById('loginEmail').value;
+            var loginPassword = document.getElementById('loginPassword').value;
+
+            var user = users.find(user => user.email === loginEmail && user.password === loginPassword);
+
+            if (user) {
+                document.getElementById('loginErrorMessage').textContent = 'Login successful!';
+                var welcomeMessage = 'Welcome, ' + user.username + '!';
+                alert(welcomeMessage);
+            } else {
+                document.getElementById('loginErrorMessage').textContent = 'Login failed. Check your credentials.';
+            }
+        }
+    </script>
+</body>
+</html>

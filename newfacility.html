@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Site</title>
+    <!-- normalize css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom utilities css -->
+    <link rel = "stylesheet" href = "css/utilities.css">
+    <!-- custom main css -->
+    <link rel = "stylesheet" href = "css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia&family=Cormorant+Garamond:wght@400;500&family=Lavishly+Yours&family=Nanum+Myeongjo:wght@700&family=Passions+Conflict&family=Sacramento&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+:root{
+    --poppins-font: 'Poppins', sans-serif;
+    --transition: all 300ms ease-in-out;
+    --brown-color: #EAC7C7;
+    --dark-color: #222;
+    --light-brown-color: #f9f3eb;
+    --light-grey-color: #f1f1f1;
+    --light-grey-color-shade: #fafafa;
+    --dark-grey-color: #a3a3a3;
+    --white-color: #fff;
+    --box-shadow: 0px 4px 19px -8px rgba(0, 0, 0, 0.5);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html{
+    font-size: 10px; /* 1rem becomes 10px */
+}
+body{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    line-height: 1.6;
+    color: var(--dark-color);
+    padding-top: 80px;
+}
+a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    outline: 0;
+}
+ul{
+    list-style-type: none;
+}
+img{
+    width: 100%;
+    display: block;
+}
+h1, h2, h3, h4{
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.btn {
+  position: relative;
+  background:#D7B19D;
+  color: var(--white);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-5);
+  text-transform: var(--text-transform, capitalize);
+  border: 1px solid #D7B19D;
+  border-radius:15px;
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.btn1{
+  position: absolute;
+  left:1370px;
+  top:118px;
+  background:#D7B19D;
+  color: var(--white);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-5);
+  text-transform: var(--text-transform, capitalize);
+  border: 1px solid #D7B19D;
+  border-radius:15px;
+  padding: 10px 20px;
+  z-index: 1;
+}
+.btn5{
+  position: absolute;
+  left:1190px;
+  top:118px;
+  background:#D7B19D;
+  color:var(--white);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-5);
+  text-transform: var(--text-transform, capitalize);
+  border: 1px solid #D7B19D;
+  border-radius:15px;
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+
+
+
+.home{
+    width: 100%;
+    min-height: 440px;
+    background: url("rbg.jpg");
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-text{
+    color: var(--bg-color);
+    text-align: center;
+}
+
+.home-title{
+    font-size: 3.5rem;
+}
+
+.home-subtitle{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.about{
+    position: relative;
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .contentBx{
+    max-width: 50%;
+    width: 50%;
+    text-align: left;
+    padding-right: 40px;
+}
+
+.titleText{
+    font-weight: 600;
+    color: #111;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.title-text{
+    color: #111;
+    font-size: 1em;
+}
+
+.about .imgBx{
+    position: relative;
+    min-width: 50%;
+    width: 50%;
+    min-height: 500px;
+}
+
+.btn2{
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 30px;
+    background: #fff;
+    border: .8px solid #111;
+    color: #333;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.btn2:hover{
+    background-color: var(--second-color);
+    border: none;
+    color: #fff;
+}
+
+.post-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-top: 2rem !important;
+    width:1500px;
+    font-size:20px;
+}
+
+.filter-item{
+    font-size:12px;
+    font-weight: 500;
+    cursor: pointer;
+    width:100px;
+}
+
+.active-filter{
+    background:#a5ffd6;
+    color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.post{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.post-box{
+    background: var(--bg-color);
+    box-shadow: 0 4px 14px hsl(35deg 25% 15% / 10%);
+    padding: 15px;
+    border-radius: 0.5rem;
+}
+
+.post-img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+
+.category{
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--second-color);
+}
+
+.post-title{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-date{
+    display: flex;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+.post-description{
+    font-size: 2rem;
+    
+   font-family:'Times New Roman', Times, serif;
+   row-gap: 1rem;
+    margin: 5px 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid var(--second-color);
+}
+
+.profile-name{
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+
+
+/* navbar */
+.navbar{
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.navbar .container{
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+}
+.toggler-and-category{
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 275px;
+    padding-right: 4rem;
+    height: 80px;
+    position: relative;
+}
+.category-list span{
+    margin-right: 5rem;
+}
+.navbar-nav{
+    display: none;
+}
+.account-info{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.account-info .btn:first-child{
+    margin-right: 1.6rem;
+}
+.navbar .btn{
+    font-size: 2rem;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+.navbar .btn:hover{
+    opacity: 0.9!important;
+    color:Tan;
+}
+
+#category-list-items{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    z-index: -1;
+    -webkit-transform: translateY(-150%);
+        -ms-transform: translateY(-150%);
+            transform: translateY(-150%);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+.show-category-items{
+    -webkit-transform: translateY(0)!important;
+        -ms-transform: translateY(0)!important;
+            transform: translateY(0)!important; /* js related */
+}
+#category-list-items li{
+    margin: 2rem 0;
+    font-size: 1.5rem;
+}
+#category-list-items li a{
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+#category-list-items li a:hover{
+    color: var(--brown-color);
+}
+
+#side-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    padding: 6rem 2rem 0 3.4rem;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+
+/* show navbar class - js related */
+.side-navbar-show{
+    -webkit-transform: translateX(0)!important;
+        -ms-transform: translateX(0)!important;
+            transform: translateX(0)!important;
+}
+#side-navbar li{
+    margin: 2.4rem 0;
+}
+#side-navbar li a{
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+#side-navbar li a:hover{
+    color: var(--brown-color);
+}
+.navbar-hide-btn{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+}
+.navbar-hide-btn i{
+    font-size: 2.6rem;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+.navbar-hide-btn:hover i{
+    color: var(--brown-color)!important;
+}
+
+/* header */
+.header{
+    position: relative;
+    overflow: hidden;
+    min-height: 730px;
+}
+.header-content{
+    padding-top: 10rem;
+    padding-bottom: 1.2rem;
+    row-gap: 13rem;
+}
+.header-left h1{
+    opacity: 0.9;
+    font-size: 4.5rem;
+}
+.header-left .text{
+    margin: 3.5rem 0 6.5rem 0;
+    font-size: 1.6rem;
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.btn-header{
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1.4rem 4.2rem;
+    border-radius: 1rem;
+}
+.header-right{
+    z-index: 1;
+}
+.header-right img{
+    max-width: 598px;
+    margin: auto;
+}
+.header-shape{
+    display: none;
+}
+
+
+/* footer */
+.footer-content{
+    gap: 8rem;
+}
+.footer-item .text{
+    line-height: 1.8;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+.footer-item h3{
+    margin-bottom: 3rem;
+    font-size: 2.1rem;
+}
+.social-links{
+    margin-top: 2rem;
+}
+.social-links li a{
+    width: 23px;
+    height: 23px;
+    border: 2px solid var(--dark-color);
+    margin: .25rem;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+.social-links li a:hover{
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+.footer-end{
+    min-height: 6.7rem;
+    padding: 2rem 0;
+}
+.footer-end .text{
+    font-size: 1.5rem;
+    opacity: 1;
+}
+.footer-end img{
+    width: 52px;
+    height: 32px;
+    margin-left: 1rem;
+}
+.footer-end img:first-child{
+    margin-left: 0;
+}
+.footer-end .container{
+    row-gap: 3rem;
+}
+
+
+
+/* Media Queries */
+@media screen and (min-width: 576px){
+    .new-products-content, .category-content, .featured-deals-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .feedback-item .text{
+        font-size: 2.2rem;
+    }
+    .feedback-item .quote-icon{
+        width: 70px;
+    }
+    .feedback-item .client{
+        width: 138px;
+        height: 138px;
+        bottom: -69px;
+    }
+    .container{
+        margin: 0 auto;
+        width: 95%;
+    }
+
+}
+
+@media screen and (min-width: 678px){
+    .latest-news-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px){
+    .header-content{
+        grid-template-columns: repeat(2, 1fr);
+        -webkit-column-gap: 4rem;
+           -moz-column-gap: 4rem;
+                column-gap: 4rem;
+        row-gap: 0;
+    }
+    .header-left{
+        text-align: left;
+    }
+    .header-content{
+        padding-top: 0;
+    }
+    .header-content .text{
+        max-width: 100%;
+    }
+    .catalog-content{
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+        row-gap: 0;
+        -webkit-column-gap: 5rem;
+           -moz-column-gap: 5rem;
+                column-gap: 5rem;
+    }
+    .catalog-right{
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+    }
+    .catalog-right .text{
+        padding-left: 0;
+    }
+    .footer-content{
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+    }
+    .footer-content .social-links{
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .navbar{
+        background-color: var(--white-color);
+    }
+    .toggler-and-category{
+        padding-left: 4rem;
+    }
+    .navbar-nav{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        opacity: 0.95;
+    }
+    .account-info{
+        margin-left: 8rem;
+    }
+    .account-info .btn{
+        color: var(--dark-color);
+    }
+    .nav-link{
+        -webkit-transition: var(--transition);
+        -o-transition: var(--transition);
+        transition: var(--transition);
+    }
+    .nav-link-text{
+        font-weight: 500;
+    }
+    .dropdown-icon{
+        margin-left: 1rem;
+        font-size: 12px;
+        -webkit-text-stroke: 1px var(--dark-color);
+        vertical-align: 3px;
+        -webkit-transition: var(--transition);
+        -o-transition: var(--transition);
+        transition: var(--transition);
+    }
+    .nav-item{
+        margin-left: 1.2rem;
+    }
+    .active-link .nav-link-text{
+        font-weight: 600;
+        color: var(--brown-color);
+    }
+    .active-link .dropdown-icon{
+        color: var(--brown-color);
+        -webkit-text-stroke: 1px var(--brown-color);
+    }
+    .nav-link:hover{
+        color: var(--brown-color);
+    }
+    .nav-link:hover .dropdown-icon{
+        -webkit-text-stroke: 1px var(--brown-color);
+    }
+
+    .header-content{
+        -webkit-column-gap: 22rem;
+           -moz-column-gap: 22rem;
+                column-gap: 22rem;
+    }
+    .header-shape{
+        display: block;
+        position: absolute;
+        right: -180px;
+        bottom: -280px;
+        width: 400px;
+    }
+
+    .new-products-content, .category-content, .featured-deals-content, .latest-news-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer-content{
+        grid-template-columns: 380px 1fr 1fr 1fr;
+    }
+    .footer-end .container{
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        grid-template-columns: auto 330px;
+    }
+    .footer-end .text{
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .nav-item{
+        margin-left: 3.5rem;
+    }
+    .account-info .btn:first-child{
+        margin-right: 2rem;
+    }
+    .header-left h1{
+        font-size: 5.5rem;
+    }
+    .header-left .text{
+        font-size: 1.8rem;
+    }
+    .header-shape{
+        right: 0;
+        bottom: -92px;
+        width: 714px;
+    }
+    .header-right img{
+        position: absolute;
+        right: 36px;
+        width: 598px;
+        bottom: 127px;
+    }
+
+    .new-products-content, .category-content, .featured-deals-content{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .category-item:first-child{
+        grid-column: 1 / span 2;
+    }
+    .category-item:last-child{
+        grid-column: 3 / span 2;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .header-content{
+        -webkit-column-gap: 0;
+           -moz-column-gap: 0;
+                column-gap: 0;
+    }
+    .feedback-container{
+        grid-template-columns: repeat(3, 1fr);
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        position: relative;
+        min-height: 545px;
+    }
+    .feedback-item{
+        width: 495px;
+        display: block;
+    }
+    .feedback-item .text{
+        max-width: 100%;
+    }
+    #feedback-display{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        z-index: 2;
+    }
+    .feedback-item:first-child, .feedback-item:last-child{
+        top: 162px;
+        position: absolute;
+    }
+    .feedback-item:first-child{
+        left: 0;
+    }
+    .feedback-item:last-child{
+        right: 0;
+    }
+}
+
+.holder{
+    overflow-x: hidden;
+}
+
+/* bacground colors */
+.bg-light-brown{background-color: var(--light-brown-color);}
+.bg-brown{background-color: var(--brown-color);}
+.bg-light-grey{background-color: var(--light-grey-color);}
+.bg-light-grey-color-shade{background-color: var(--light-grey-color-shade);}
+.bg-dark-grey{background-color: var(--dark-grey-color);}
+.bg-dark{background-color: var(--dark-color);}
+.bg-white{background-color: var(--white-color);}
+
+/* text colors */
+.text-grey{color: var(--dark-grey-color);}
+.text-brown{color: var(--brown-color);}
+.text-white{color: var(--white-color);}
+.text-dark{color: var(--dark-color);}
+.text-light-grey{color: var(--light-grey-color);}
+
+/* buttons and links */
+.btn{
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* flexbox and grids */
+.flex{
+    /* centering as default */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.grid{
+    display: grid;
+}
+.container{
+    max-width: calc(1145px + 20px);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* text stylings */
+.text{
+    line-height: 1.35;
+    opacity: 0.8;
+    font-weight: 400;
+}
+.text-center{text-align: center;}
+.text-uppercase{text-transform: uppercase;}
+.lead{
+    color: var(--dark-grey-color);
+    font-size: 1.8rem;
+}
+
+/* padding */
+.py{
+    padding: 12.5rem 0;
+}
+
+/* section title */
+.section-title h2{
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+}
+.section-title .line{
+    height: 1px;
+    width: 61px;
+    background-color: var(--dark-grey-color);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+/* product info stylings */
+.info{
+    padding: 2rem;
+}
+.info .ratings span{
+    margin-left: .2rem;
+}
+.info .name{
+    font-weight: 600;
+    margin: 2rem 0;
+}
+.info .price .old{
+    position: relative;
+}
+.info .price .old::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--dark-grey-color);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+.info .price .new{
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class = "holder">
+        <!-- navbar -->
+        <nav class = "navbar bg-brown flex">
+            <div class = "container flex">
+                <div class = "toggler-and-category bg-brown text-white flex">
+                    <button type = "button" class = "btn navbar-show-btn text-white">
+                        <i class = "fas fa-bars"></i>
+                    </button>
+                    <img  class="img1" src="./logo1.jpg" height="50px" width="150px">
+                    <div class = "category-list">
+                        
+                        <button type = "button" class = "btn category-toggler-btn text-white">
+                            <i class = "fas fa-circle-arrow-down"></i>
+                        </button>
+                    </div>
+                    
+                    
+                    <ul id = "side-navbar" class = "bg-white text-uppercase">
+                        <button type = "button" class = "btn navbar-hide-btn text-dark">
+                            <i class = "fas fa-times"></i>
+                        </button>
+                        <li><a href = "servicenew.html">SERVICES</a></li>
+                        <li><a href = "homeversion.html">DESIGNERS</a></li>
+                        <li><a href = "contact.html">CONTACT</a></li>
+                        
+                        <li><a href = "rishsan.html">SIGNUP</a></li>
+                    <!-- end of side navbar -->
+
+                    <ul id = "category-list-items" class = "bg-white">
+                        <li><a href = "design3.html">GET ESTIMATE</a></li>
+                        <li><a href = "designform.html">BOOK CONSULTATION</a></li>
+                        <li><a href = "newblog.html">RECENT BLOG</a></li>
+                        <li><a href = "portfolio.html">PORTFOLIO</a></li>
+                    </ul>
+                </div>
+
+                <!-- main navigation list -->
+                <div class = "navbar-collapse flex">
+                    <!-- nav list -->
+                    <ul class = "navbar-nav text-uppercase">
+                        <li class = "nav-item">
+                            <a href = "servicenew.html" class = "nav-link">
+                                <span class = "nav-link-text">SERVICES</span>
+                                
+
+                            </a>
+                        </li>
+                        
+                        <li class = "nav-item">
+                            <a href = "homeversion.html" class = "nav-link">
+                                <span class = "nav-link-text">DESIGNER</span>
+                                
+                                   
+                                </span>
+                            </a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "contact.html" class = "nav-link">
+                                <span class = "nav-link-text">CONTACT</span>
+                                
+                                   
+                                </span>
+                            </a>
+                            <li class = "nav-item">
+                                <a href = "rishsan.html" class = "nav-link">
+                                    <span class = "nav-link-text">SIGNUP</span>
+                                    
+                                       
+                                    </span>
+                                </a>
+                        </li>
+                    </ul>
+                    <!-- end of nav list -->
+
+                    <!-- account icons -->
+                   
+                    <!-- end of account icons -->
+                </div>
+                <!-- end of main navigation list -->
+            </div>
+        </nav>
+        
+	
+
+<div class="post-filter container">
+    <span class="filter-item active-filter" data-filter="all">All</span>
+    <span class="filter-item" data-filter="k">Kitchen</span>
+    <span class="filter-item" data-filter="mb">Master Bedroom</span>
+    <span class="filter-item" data-filter="lr">Living room</span>
+    <span class="filter-item" data-filter="br">Bathroom</span>
+    <span class="filter-item" data-filter="kb">Kid's room</span>
+    <span class="filter-item" data-filter="dr">Dining Room</span>
+    <span class="filter-item" data-filter="fy">Foyer</span>
+    <span class="filter-item" data-filter="sr">Study Room</span>
+    <span class="filter-item" data-filter="wd">Wall decor</span>
+    <span class="filter-item" data-filter="by">Balcony</span>
+    
+
+
+</div>
+
+<div class="post container">
+    <!-- Post 1 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/mbr-1696502676-9usaT/mbr6-1696502704-Q0tle.jpg" alt="" class="post-img">
+        <a href="#" class="post-title">Designed by Maria</a>
+        <p class="post-description">Tropical Master Bedroom Design With Leafy Wallpaper</p>
+        <div class="profile">
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+        </div>
+    </div>
+    <!-- Post 2 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/mbr-1696502676-9usaT/mbr5-1696502705-QtGnR.jpg" alt="" class="post-img">
+      
+        <a href="#" class="post-title">Designed by Diego</a>
+         <p class="post-description">Industrial Master Bedroom Design With Wooden Bed And Side Tables</p>
+        <div class="profile">
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+        </div>
+    </div>
+    <!-- Post 3 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/mbr-1696502676-9usaT/mbr4-1696502706-k0UmO.jpg" alt="" class="post-img">
+      
+        <a href="#" class="post-title">Designed by Kaitlyn</a>
+       
+        <p class="post-description">Classic Master Bedroom Design With Floor To Ceiling White Swing Wardrobe</p>
+        <div class="profile">
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+        </div>
+    </div>
+    <!-- Post 4 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/mbr-1696502676-9usaT/mbr3-1696502707-yiAGe.jpg" alt="" class="post-img">
+        
+        <a href="#" class="post-title">Designed by Kate </a>
+        
+        <p class="post-description">Asian Master Bedroom Design With Floral Wallpaper</p>
+        <div class="profile">
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+        </div>
+    </div>
+    <!-- Post 5 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/mbr-1696502676-9usaT/br1-1696502709-U6WQ2.jpg" alt="" class="post-img">
+      
+        <a href="#" class="post-title">Designed By Mark</a>
+        
+        <p class="post-description">Contemporary Master Bedroom Design With Floral Wallpaper</p>
+        <div class="profile">
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+        </div>
+    </div>
+    <!-- Post 6 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/mbr-1689058233-174Yd/d-inmbr-jas2023-1132-1689327556-t4MYg.jpg" alt="" class="post-img">
+       
+        <a href="#" class="post-title">Designed by Maria</a>
+       
+        <p class="post-description">Contemporary Master Bedroom Design With Teal Fluted Panelled Accent Wall</p>
+        <div class="profile">
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+        </div>
+    </div>
+    <!-- Post 7 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/mbr-1689058233-174Yd/d-inmbr-jas2023-1129-1689327561-d9Ub1.jpg" alt="" class="post-img">
+        <a href="#" class="post-title">Designed by Steve</a>
+        <p class="post-description">Traditional Master Bedroom Design With Beige Damask Wallpaper And Wooden Furntiture</p>
+        <div class="profile">
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+        </div>
+    </div>
+    <!-- Post 8 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/mbr-1689058233-174Yd/mbr21-1-1689058275-uYi8p.jpg" alt="" class="post-img">
+        <a href="#" class="post-title">Designed by Mary</a>
+        
+        <p class="post-description">Modern Master Bedroom Design With Blue Accent Wall
+        </p>
+        <div class="profile">
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+           </div>
+    </div>
+    <!-- Post 9 -->
+    <div class="post-box mb">
+        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/mbr-1689058233-174Yd/mbr13-1689058288-Exyyi.jpg" alt="" class="post-img">
+        <a href="#" class="post-title">Designed by Steve</a>
+        <p class="post-description">Contemporary Spacious Master Bedroom Design With Beige Panelled Wall</p>
+        <div class="profile">
+            
+            <center><a href="design3.html">
+                <button class="btn"align="center">Get Estimate</button></a>
+                </center>
+        </div>
+    </div>
+     <!-- kitchen -->
+        <!-- Post 1 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/564x/39/f0/ad/39f0ad9776b98c4ea91172dd3b364d58.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Maria</a>
+            <p class="post-description">Mid Century Modern Modular L Shaped Kitchen Design In Light Teal Green</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/564x/c2/a1/1f/c2a11f2ab3284424c8a4ca6ca15dd784.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed by Diego</a>
+             <p class="post-description">Contemporary U Shaped Modular With Calcolo Toned Units</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+            </div>
+        </div>
+
+        
+        <!-- Post 3 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/736x/10/cd/28/10cd282c45c03039806e7dd9337b0cb5.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed by Kaitlyn</a>
+           
+            <p class="post-description">Classic L Shaped Modular Kitchen Design With Montone Cabinets And Herringbone Backsplash</p>
+            <div class="profile">
+                
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 4 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/564x/0b/26/b6/0b26b664286a3e5a6926eb8e0cab711e.jpg" alt="" class="post-img">
+            
+            <a href="#" class="post-title">Designed by Kate </a>
+            
+            <p class="post-description">Modern Straight Modular Kitchen Design With Elefante Green Cabinets And Marble Countertop</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 5 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/564x/42/66/d9/4266d9d61b21da24a05c112c5e0fc66d.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed By Mark</a>
+            
+            <p class="post-description">Contemporary Modular L Shaped Kitchen Design With Dark Green Verde Alpino And White Cabinets</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 6 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/564x/c0/73/96/c07396788441056354001604d2771416.jpg" alt="" class="post-img">
+           
+            <a href="#" class="post-title">Designed by Maria</a>
+           
+            <p class="post-description">Contemporary Caruba Green And Inverno Beige Modular Island Kitchen Design With Damask Wallpaper</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 7 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/564x/c0/5f/fb/c05ffb64eceda41c8730c11bdfcff646.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Steve</a>
+            <p class="post-description">Contemporary Grey Modular Kitchen Design With White Marble Island</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+                
+            </div>
+        </div>
+        <!-- Post 8 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/564x/b5/c9/cd/b5c9cdb8ecbd9747bf4bdb4abe6aa3e3.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Amber</a>
+            
+            <p class="post-description">Modern Modular Parallel Kitchen Design With Tectona And Acacia Cabinets</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+               </div>
+        </div>
+        <!-- Post 9 -->
+        <div class="post-box k">
+            <img src="https://i.pinimg.com/564x/05/a0/fd/05a0fd9828fa69d73b3a7bd6142f61b2.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Mary</a>
+            <p class="post-description">Classic U Shaped Modular Kitchen Design With Black Granite Countertop</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+              
+            </div>
+        </div>
+        <!-- Living room -->
+        <!-- Post 1 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/renders-1696505505-hTG0j/living-room-1697459019-PdUHc/l9-1697459078-73kBi.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Maria</a>
+            <p class="post-description">Modern Dark Blue Living Room Design With Wooden TV Unit</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/renders-1696505505-hTG0j/living-room-1697459019-PdUHc/l8-2-1697459079-2N5gx.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed by Diego</a>
+             <p class="post-description">Contemporary Living Room Design With Orange Sofa And Brown Cushions</p>
+            <div class="profile">
+                <center><a href="design3.html">
+                    <button class="btn"align="center">Get Estimate</button></a>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 3 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/renders-1696505505-hTG0j/living-room-1697459019-PdUHc/l7-1697459082-qQ2bN.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed by Kaitlyn</a>
+           
+            <p class="post-description">Contemporary Living Room Design With Cream Toned Walls And White Trims</p>
+            <div class="profile">
+                
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 4 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/renders-1696505505-hTG0j/living-room-1697459019-PdUHc/l6-1-1697459083-6UWxX.jpg" alt="" class="post-img">
+            
+            <a href="#" class="post-title">Designed by Kate </a>
+            
+            <p class="post-description">Contemporary Cream And Blue Living Room Design With Cream Toned Walls And Gold Inlays</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 5 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/renders-1696505505-hTG0j/living-room-1697459019-PdUHc/l3-11-1697459090-mndJT.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed By Mark</a>
+            
+            <p class="post-description">Contemporary Living Room Design With Grey L Shaped Sofa And Green Accent Wall With Trims</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 6 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/renders-1696505505-hTG0j/living-room-1697459019-PdUHc/l1-1697459092-FHBHe.jpg" alt="" class="post-img">
+           
+            <a href="#" class="post-title">Designed by Maria</a>
+           
+            <p class="post-description">Contemporary Living Room Design With Beige L Shaped Sofa And Blue Accent Chairs</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 7 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/living-room-1696506173-qfuiv/lr-2-1696506342-4wAhy.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Steve</a>
+            <p class="post-description">Contemporary Spacious Living Room Design With Wooden Storage Unit</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+                
+            </div>
+        </div>
+        <!-- Post 8 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/living-room-1696506173-qfuiv/l3-1696586125-Zi4hn.jpg" alt="" class="post-img">
+            <h2>Designed By Mary</h2>
+            
+            <p class="post-description">Modern Modular Parallel Kitchen Design With Tectona And Acacia Cabinets</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+               </div>
+        </div>
+        <!-- Post 9 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/living-room-1689059506-0ozMM/real-home-1690365930-sHRZY/la-17-1690365957-KirL1.jpg" alt="" class="post-img">
+            <h2>Designed by Amber</h2>
+            <p class="post-description">Classic Beige And Wood Living Room Design</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+              
+            </div>
+            </div>
+            <!-- Bathroom -->
+            <!-- Post 1 -->
+        <div class="post-box br">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2022-1664872805-f0ijv/br-1664872824-fraak/d-inbr-ond2022-3047-1671534573-0zYNA/15-3-1671534685-1MpZF.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Maria</a>
+            <p class="post-description">Modern Small Bathroom Design Idea With Brown Textured Wall Tiles</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="post-box br">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/amj-2023-1678081565-AJpiy/bathroom-1681310164-CzldO/br33-1-1687497054-QTclO.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed by Diego</a>
+             <p class="post-description">Modern Beige Bathroom Design With Rectangular Mirror</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 3 -->
+        <div class="post-box br">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/amj-2023-1678081565-AJpiy/bathroom-1681310164-CzldO/bathroom-02-min-1687499955-1AOAG.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed by Kaitlyn</a>
+           
+            <p class="post-description">Eclectic Blue And White Bathroom Design With Multicolour Patterned Flooring</p>
+            <div class="profile">
+                
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 4 -->
+        <div class="post-box br">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/amj-2023-1678081565-AJpiy/bathroom-1681310164-CzldO/br39-1687502864-jkqhb.jpg" alt="" class="post-img">
+            
+            <a href="#" class="post-title">Designed by Kate </a>
+            
+            <p class="post-description">Industrial Grey And White Bathroom Design With Rectangular Mirror</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 5 -->
+        <div class="post-box lr">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/renders-1696505505-hTG0j/living-room-1697459019-PdUHc/l3-11-1697459090-mndJT.jpg" alt="" class="post-img">
+          
+            <a href="#" class="post-title">Designed By Mark</a>
+            
+            <p class="post-description">Contemporary Living Room Design With Grey L Shaped Sofa And Green Accent Wall With Trims</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+        <!-- Post 6 -->
+        <div class="post-box br">
+            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/amj-2023-1678081565-AJpiy/bathroom-1681310164-CzldO/br29-1687497057-oKKYx.jpg" alt="" class="post-img">
+           
+            <a href="#" class="post-title">Designed by Maria</a>
+           
+            <p class="post-description">Modern Grey Small Bathroom Design Idea With Wall Mounted Vanity Unit</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+            </div>
+        </div>
+         <!-- kid's room -->
+        <!-- Post 7 -->
+        <div class="post-box kb">
+            <img src="https://i.pinimg.com/564x/76/c4/66/76c466c3e7a2fad3e31fb38f07a51478.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Steve</a>
+            <p class="post-description">Trendy Kids bedroom design with cabinets and shelves for toys, chair table with wall art decor ideas</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+                
+            </div>
+        </div>
+        <!-- Post 8 -->
+        <div class="post-box kb">
+            <img src="https://i.pinimg.com/564x/0c/8a/ed/0c8aeda8983f56fe8a9d6faaa18159e1.jpg" alt="" class="post-img">
+            <h2>Designed By Mary</h2>
+            
+            <p class="post-description">Modern Modular Parallel Kitchen Design With Tectona And Acacia Cabinets</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+               </div>
+        </div>
+        <!-- Post 9 -->
+        <div class="post-box kb">
+            <img src="https://i.pinimg.com/564x/af/a9/8e/afa98e339cf9c114dd390cc1fa60bb42.jpg" alt="" class="post-img">
+            <h2>Designed by Amber</h2>
+            <p class="post-description">Classic Beige And Wood Living Room Design</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+              
+            </div>
+            </div>
+            <div class="post-box kb">
+                <img src="https://i.pinimg.com/564x/10/54/31/105431c0c79f64be85811fa96c48bf48.jpg" alt="" class="post-img">
+                <h2>Designed by George</h2>
+                <p class="post-description">Classic Beige And Wood Living Room Design</p>
+                <div class="profile">
+                    <center>
+                        <button class="btn"align="center">Get Estimate</button>
+                        </center>
+                  
+                </div>
+                </div>
+                <div class="post-box kb">
+                    <img src="https://i.pinimg.com/564x/d0/96/e2/d096e2fc16691ee1b229d0df58f14e64.jpg" alt="" class="post-img">
+                    <h2>Designed by Shaniya</h2>
+                    <p class="post-description">Contemporary Kids Room Design For Girls With Floral Upholstered Headboards</p>
+                    <div class="profile">
+                        <center>
+                            <button class="btn"align="center">Get Estimate</button>
+                            </center>
+                      
+                    </div>
+                    </div>
+                    <!-- Dining room -->
+        <!-- Post 7 -->
+        <div class="post-box dr">
+            <img src="https://i.pinimg.com/736x/26/c8/95/26c895a83ecb227ee213af04dbd4a353.jpg" alt="" class="post-img">
+            <a href="#" class="post-title">Designed by Steve</a>
+            <p class="post-description">Trendy Kids bedroom design with cabinets and shelves for toys, chair table with wall art decor ideas</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+                
+            </div>
+        </div>
+        <!-- Post 8 -->
+        <div class="post-box dr">
+            <img src="https://i.pinimg.com/564x/52/3b/82/523b82fbe917091632a659642525ef50.jpg" alt="" class="post-img">
+            <h2>Designed By Mary</h2>
+            
+            <p class="post-description">Modern Modular Parallel Kitchen Design With Tectona And Acacia Cabinets</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+               </div>
+        </div>
+        <!-- Post 9 -->
+        <div class="post-box dr">
+            <img src="https://i.pinimg.com/736x/47/3f/21/473f21b3c15f15f0f68010dcc8767474.jpg" alt="" class="post-img">
+            <h2>Designed by Amber</h2>
+            <p class="post-description">Classic Beige And Wood Living Room Design</p>
+            <div class="profile">
+                <center>
+                    <button class="btn"align="center">Get Estimate</button>
+                    </center>
+              
+            </div>
+            </div>
+            <div class="post-box dr">
+                <img src="https://i.pinimg.com/564x/95/4b/1a/954b1a5bb02473fe966b610de01b7d3f.jpg" alt="" class="post-img">
+                <h2>Designed by George</h2>
+                <p class="post-description">Classic Beige And Wood Living Room Design</p>
+                <div class="profile">
+                    <center>
+                        <button class="btn"align="center">Get Estimate</button>
+                        </center>
+                  
+                </div>
+                </div>
+                <!--Foyer-->
+                <div class="post-box fy">
+                    <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/foyer-1696506975-oMXwb/fo-2-1696507033-exOHR.jpg" alt="" class="post-img">
+                    <h2>Designed by Maria</h2>
+                    <p class="post-description">Contemporary Kids Room Design For Girls With Floral Upholstered Headboards</p>
+                    <div class="profile">
+                        <center>
+                            <button class="btn"align="center">Get Estimate</button>
+                            </center>
+                      
+                    </div>
+                    </div>
+                    <div class="post-box fy">
+                        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/foyer-1696506975-oMXwb/fo-1-1696507038-mAGGL.jpg" alt="" class="post-img">
+                        <h2>Designed by Simon</h2>
+                        <p class="post-description">Farmhouse Dark Green Foyer Design With Closed Storage</p>
+                        <div class="profile">
+                            <center>
+                                <button class="btn"align="center">Get Estimate</button>
+                                </center>
+                          
+                        </div>
+                        </div>
+                        <div class="post-box fy">
+                            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/foyer-1689680575-2vR4m/fo40-1692781486-oTfoJ.jpg" alt="" class="post-img">
+                            <h2>Designed by George</h2>
+                            <p class="post-description">Scandinavian Mint Green Foyer Design With Frosty White Cabinet And Wooden Seater</p>
+                            <div class="profile">
+                                <center>
+                                    <button class="btn"align="center">Get Estimate</button>
+                                    </center>
+                              
+                            </div>
+                            </div>
+                            <div class="post-box fy">
+                                <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/foyer-1689680575-2vR4m/foyerr-1692168066-DGOmw.jpg" alt="" class="post-img">
+                                <h2>Designed by Mark</h2>
+                                <p class="post-description">Classic Light Beige Foyer Design With Wall Trims And Black Console</p>
+                                <div class="profile">
+                                    <center>
+                                        <button class="btn"align="center">Get Estimate</button>
+                                        </center>
+                                  
+                                </div>
+                                </div>
+                                <div class="post-box fy">
+                                    <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/amj-2023-1678081565-AJpiy/foyer-1683781344-UoKg9/fooo-1687498551-BftVW.jpg" alt="" class="post-img">
+                                    <h2>Designed by Shaniya</h2>
+                                    <p class="post-description">Contemporary Foyer Design With Wooden Vertical Planks And Abstract Mirror</p>
+                                    <div class="profile">
+                                        <center>
+                                            <button class="btn"align="center">Get Estimate</button>
+                                            </center>
+                                      
+                                    </div>
+                                    </div>
+                                    <div class="post-box fy">
+                                        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/amj-2023-1678081565-AJpiy/foyer-1683781344-UoKg9/fo21-1686830443-e7D9O.jpg" alt="" class="post-img">
+                                        <h2>Designed by Amber</h2>
+                                        <p class="post-description">Contemporary White Foyer Design With Round Mirror And Pendant Lights</p>
+                                        <div class="profile">
+                                            <center>
+                                                <button class="btn"align="center">Get Estimate</button>
+                                                </center>
+                                          
+                                        </div>
+                                        </div>
+                                        <div class="post-box fy">
+                                            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/amj-2023-1678081565-AJpiy/foyer-1683781344-UoKg9/fo-1-1686830442-RqoOx.jpg" alt="" class="post-img">
+                                            <h2>Designed by Shibani</h2>
+                                            <p class="post-description">Contemporary Foyer Design With Frosty White Storage Unit And Beige Wallpaper
+                                            </p>
+                                            <div class="profile">
+                                                <center>
+                                                    <button class="btn"align="center">Get Estimate</button>
+                                                    </center>
+                                              
+                                            </div>
+                                            </div>
+                                            <!--Study room-->
+                <div class="post-box sr">
+                    <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/existing-renders-1696420274-57isq/study-table-1696420283-ku7Sh/20-1696420351-EjW8O.jpg" alt="" class="post-img">
+                    <h2>Designed by Maria</h2>
+                    <p class="post-description">Modern White And Brown Study Room Design With Under Ledge LED Lighting</p>
+                    <div class="profile">
+                        <center>
+                            <button class="btn"align="center">Get Estimate</button>
+                            </center>
+                      
+                    </div>
+                    </div>
+                    <div class="post-box sr">
+                        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/existing-renders-1696420274-57isq/study-table-1696420283-ku7Sh/17-1696420347-NVq5t.jpg" alt="" class="post-img">
+                        <h2>Designed by Simon</h2>
+                        <p class="post-description">Contemporary Study Room Design With Wall Mounted Ledges And Grey Wall Panelling</p>
+                        <div class="profile">
+                            <center>
+                                <button class="btn"align="center">Get Estimate</button>
+                                </center>
+                          
+                        </div>
+                        </div>
+                        <div class="post-box sr">
+                            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/existing-renders-1696420274-57isq/study-table-1696420283-ku7Sh/19-1696420350-fvKCG.jpg" alt="" class="post-img">
+                            <h2>Designed by George</h2>
+                            <p class="post-description">Modern Walnut Bronze And Frosty White Study Room Design With Wide Fluted Wall Backdrop</p>
+                            <div class="profile">
+                                <center>
+                                    <button class="btn"align="center">Get Estimate</button>
+                                    </center>
+                              
+                            </div>
+                            </div>
+                            <div class="post-box sr">
+                                <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/existing-renders-1696420274-57isq/study-table-1696420283-ku7Sh/14-1696420337-JGV2K.jpg" alt="" class="post-img">
+                                <h2>Designed by kate</h2>
+                                <p class="post-description">Classic Light Beige Foyer Design With Wall Trims And Black Console</p>
+                                <div class="profile">
+                                    <center>
+                                        <button class="btn"align="center">Get Estimate</button>
+                                        </center>
+                                  
+                                </div>
+                                </div>
+                                <div class="post-box sr">
+                                    <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/existing-renders-1696420274-57isq/study-table-1696420283-ku7Sh/3-1696420308-yh8kA.jpg" alt="" class="post-img">
+                                    <h2>Designed by Shaniya</h2>
+                                    <p class="post-description">Modern White And Walnut Bronze Study Room Design With Blue Lacquered Glass Board</p>
+                                    <div class="profile">
+                                        <center>
+                                            <button class="btn"align="center">Get Estimate</button>
+                                            </center>
+                                      
+                                    </div>
+                                    </div>
+                                    <!--wall decor-->
+                                    <div class="post-box wd">
+                                        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/existing-renders-1696420274-57isq/wall-design-1696921370-xLXPX/13-1696921399-qcv4N.jpg" alt="" class="post-img">
+                                        <h2>Designed by Amber</h2>
+                                        <p class="post-description">Contemporary White Foyer Design With Round Mirror And Pendant Lights</p>
+                                        <div class="profile">
+                                            <center>
+                                                <button class="btn"align="center">Get Estimate</button>
+                                                </center>
+                                          
+                                        </div>
+                                        </div>
+                                        <div class="post-box wd">
+                                            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/wall-design-1696503305-s56HY/wd1-1696503342-E8ZJR.jpg" alt="" class="post-img">
+                                            <h2>Designed by Maria</h2>
+                                            <p class="post-description">Art Deco Wall Design In Onion Pink And White
+                                            </p>
+                                            <div class="profile">
+                                                <center>
+                                                    <button class="btn"align="center">Get Estimate</button>
+                                                    </center>
+                                              
+                                            </div>
+                                            </div>
+                                            <div class="post-box wd">
+                                                <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/wall-design-1696503305-s56HY/wd-12-1696831404-4nXmn.jpg" alt="" class="post-img">
+                                                <h2>Designed by Kaitlyn</h2>
+                                                <p class="post-description">Contemporary Multicoloured Bedroom Wall Design With Wallpaper And Panel
+                                                </p>
+                                                <div class="profile">
+                                                    <center>
+                                                        <button class="btn"align="center">Get Estimate</button>
+                                                        </center>
+                                                  
+                                                </div>
+                                                </div>
+                                                <div class="post-box wd">
+                                                    <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/wall-design-1696503305-s56HY/wd-8-1696831408-bs13k.jpg" alt="" class="post-img">
+                                                    <h2>Designed by Katey</h2>
+                                                    <p class="post-description">Art Deco Green And Brown Bedroom Wall Design With Wooden Wall Panel
+                                                    </p>
+                                                    <div class="profile">
+                                                        <center>
+                                                            <button class="btn"align="center">Get Estimate</button>
+                                                            </center>
+                                                      
+                                                    </div>
+                                                    </div>
+                                                    <div class="post-box wd">
+                                                        <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/3d-team-1696502648-Ru2UT/wall-design-1696503305-s56HY/wd-9-1696831407-y3F35.jpg" alt="" class="post-img">
+                                                        <h2>Designed by Mark</h2>
+                                                        <p class="post-description">Mid Century Modern Bedroom Wall Design With Green And Brown Wooden Wall Rafters
+                                                        </p>
+                                                        <div class="profile">
+                                                            <center>
+                                                                <button class="btn"align="center">Get Estimate</button>
+                                                                </center>
+                                                          
+                                                        </div>
+                                                        </div>
+                                              <!--Balcony-->
+                                                        <div class="post-box by">
+                                                            <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/image-6483441-4-1693816570-hZAp7.JPG" alt="" class="post-img">
+                                                            <h2>Designed by Mark</h2>
+                                                            <p class="post-description">Modern Balcony Design with Brown Accent Wall and Artistic Furnishings
+                                                            </p>
+                                                            <div class="profile">
+                                                                <center>
+                                                                    <button class="btn"align="center">Get Estimate</button>
+                                                                    </center>
+                                                              
+                                                            </div>
+                                                            </div>
+                                                            <div class="post-box by">
+                                                                <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/balcony-1690797225-wkmMX/real-home-1691646637-DTdAm/13-1691646654-eYuhc.jpg" alt="" class="post-img">
+                                                                <h2>Designed by Mark</h2>
+                                                                <p class="post-description">Modern Balcony Design with Wooden Wall Planter and Stylish Furnishings
+                                                                </p>
+                                                                <div class="profile">
+                                                                    <center>
+                                                                        <button class="btn"align="center">Get Estimate</button>
+                                                                        </center>
+                                                                  
+                                                                </div>
+                                                                </div>
+                                                                <div class="post-box by">
+                                                                    <img src="https://images.livspace-cdn.com/w:1440/dpr:1/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2023-1688629305-0KDli/balcony-1690797225-wkmMX/bl1-1690797234-J2z42.jpg" alt="" class="post-img">
+                                                                    <h2>Designed by Mark</h2>
+                                                                    <p class="post-description">Contemporary Balcony Design with Grey Accent Wall and Vertical Wall Planters
+                                                                    </p>
+                                                                    <div class="profile">
+                                                                        <center>
+                                                                            <button class="btn"align="center">Get Estimate</button>
+                                                                            </center>
+                                                                      
+                                                                    </div>
+                                                                    </div>
+</div>
+
+<footer class = "footer bg-light-brown" id = "footer">
+    <div class = "container">
+        <div class = "footer-content py grid text-center">
+            <div class = "footer-item">
+                <h3>Love&Aesthetics♡</h3>
+                <p class = "text">At Love&Aesthetics, we believe that interior design is more than great functionality and beautiful aesthetics. We aim to make your home interiors a reflection of your personality. Your home should be something that you and your family take pride in and love to spend time in. Our dedicated home interior designers work with you tirelessly to tie your style with their design expertise, creating the perfect interior design plan.</p>
+                <ul class = "social-links flex">
+                    <li>
+                        <a href = "#" class = "flex"><i class = "fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href = "#" class = "flex"><i class = "fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href = "#" class = "flex"><i class = "fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href = "#" class = "flex"><i class = "fab fa-pinterest"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class = "footer-item">
+                <h3>Contact Us</h3>
+                <p class = "text">1203,Kodambakkam,Chennai</p>
+                <p class = "text">Phone: +474 2000</p>
+                <p class = "text">Email: loveandaesthticsinteriors.com</p>
+            </div>
+
+            <div class = "footer-item">
+                <h3>Recent Post</h3>
+                <ul>
+                    <li class = "text"><a href = "#">Rooms decoration</a></li>
+                    <li class = "text"><a href = "#">Kitchen decor</a></li>
+                    <li class = "text"><a href = "#">Painting and polishing</a></li>
+                </ul>
+            </div>
+
+            <div class = "footer-item">
+                <h3>Our Portfolio</h3>
+                <ul>
+                    <li class = "text"><a href = "#">Midcentury</a></li>
+                    <li class = "text"><a href = "#">Bohemian</a></li>
+                    <li class = "text"><a href = "#">Minimalist</a></li>
+                    <li class = "text"><a href = "#">Coastal</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<center>
+    <div class = "footer-end bg-dark">
+        <center>
+        <div class = "container grid">
+            <center>
+            <p class = "text text-white text-center">&copy; Copyright 2021. All Right Reserved #love&aesthetics♡</p>
+            </center>
+        </div>
+        </center>
+    </div>
+    </center>
+</footer>
+<!-- end of footer -->
+</div>
+    <script>
+      // side navbar
+      const navShowBtn = document.querySelector('.navbar-show-btn');
+      const navHideBtn = document.querySelector('.navbar-hide-btn');
+      const sideNavbar = document.getElementById('side-navbar');
+      navShowBtn.addEventListener('click', () => {
+          sideNavbar.classList.add('side-navbar-show');
+      });
+      
+      navHideBtn.addEventListener('click', () => {
+          sideNavbar.classList.remove('side-navbar-show');
+      });
+      
+      
+      
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+    <script>
+        let header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    header.classList.toggle("shadow", window.scrollY > 0)
+})
+
+//Filter
+$(document).ready(function () {
+    $(".filter-item").click(function () {
+        const value = $(this).attr("data-filter");
+        if (value == "all"){
+            $(".post-box").show("1000")
+        } else{
+            $(".post-box")
+                .not("." + value)
+                .hide(1000);
+            $(".post-box")
+            .filter("." + value)
+            .show("1000")
+        }
+    });
+    $(".filter-item").click(function () {
+        $(this).addClass("active-filter").siblings().removeClass("active-filter")
+    });
+});
+    </script>
+    <script>
+    'use strict';
+
+
+
+    /**
+     * add event on element
+     */
+    
+    const addEventOnElem = function (elem, type, callback) {
+      if (elem.length > 1) {
+        for (let i = 0; i < elem.length; i++) {
+          elem[i].addEventListener(type, callback);
+        }
+      } else {
+        elem.addEventListener(type, callback);
+      }
+    }
+    
+    
+    
+    /**
+     * navbar toggle
+     */
+    
+    const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+    const navbar = document.querySelector("[data-navbar]");
+    const navbarLinks = document.querySelectorAll("[data-nav-link]");
+    const overlay = document.querySelector("[data-overlay]");
+    
+    const toggleNavbar = function () {
+      navbar.classList.toggle("active");
+      overlay.classList.toggle("active");
+    }
+    
+    addEventOnElem(navTogglers, "click", toggleNavbar);
+    
+    const closeNavbar = function () {
+      navbar.classList.remove("active");
+      overlay.classList.remove("active");
+    }
+    
+    addEventOnElem(navbarLinks, "click", closeNavbar);
+    
+    
+    
+    /**
+     * header sticky & back top btn active
+     */
+    
+    const header = document.querySelector("[data-header]");
+    const backTopBtn = document.querySelector("[data-back-top-btn]");
+    
+    const headerActive = function () {
+      if (window.scrollY > 150) {
+        header.classList.add("active");
+        backTopBtn.classList.add("active");
+      } else {
+        header.classList.remove("active");
+        backTopBtn.classList.remove("active");
+      }
+    }
+    
+    addEventOnElem(window, "scroll", headerActive);
+    
+    let lastScrolledPos = 0;
+    
+    const headerSticky = function () {
+      if (lastScrolledPos >= window.scrollY) {
+        header.classList.remove("header-hide");
+      } else {
+        header.classList.add("header-hide");
+      }
+    
+      lastScrolledPos = window.scrollY;
+    }
+    
+    addEventOnElem(window, "scroll", headerSticky);
+    
+    
+    
+    /**
+     * scroll reveal effect
+     */
+    
+    const sections = document.querySelectorAll("[data-section]");
+    
+    const scrollReveal = function () {
+      for (let i = 0; i < sections.length; i++) {
+        if (sections[i].getBoundingClientRect().top < window.innerHeight / 2) {
+          sections[i].classList.add("active");
+        }
+      }
+    }
+    
+    scrollReveal();
+    
+    addEventOnElem(window, "scroll", scrollReveal);
+    </script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image:url('https://images.squarespace-cdn.com/content/v1/5b097b4a4cde7ab1c2125706/8f6e77d0-f9b1-4d7f-bb1e-22fbb06d3d71/Cathie+Hong_+Forest_17.jpg?format=1500w');
+        }
+        #quote-form {
+            background-color:white;
+            width: 420px;
+            padding:20px;
+            border-radius: 10px;
+            box-shadow: tan;
+            border-radius:30px;
+        }
+        .img{
+            width:200px;
+            height:90px;
+        }
+        h2 {
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 5px 0;
+        }
+        input, select {
+            width: 400px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+			background-color:#E9DAC1;
+            border-radius: 20px;
+        }
+		input.invalid {
+            border: 1px solid red;
+			background-color:red;
+        }
+        button {
+            width: 100%;
+            background-color: Tan;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #quote-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    
+    <div id="quote-form">
+        <center>
+        <img src="logo1.jpg" alt="Side Image" class="img"></center>
+        <h2>Now Get Premium & Luxury Home Interiors @ Unbelievable Price!</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your Name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Your Email">
+        <br>
+        <label for="property-type">Select Property Type:</label>
+        <select id="property-type">
+            <option value="1BHK">1BHK</option>
+            <option value="2BHK">2BHK</option>
+            <option value="3BHK">3BHK</option>
+            <option value="4BHK">4BHK/Duplex</option>
+            <option value="Villa">Independent Home/Villa</option>
+        </select>
+        <label for="room-options">Select Rooms:</label>
+        <select id="room-options" multiple>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Bedroom">Master Bedroom</option>
+            <option value="LivingRoom">Living Room</option>
+            <option value="Bathroom">Bathroom</option>
+            <option value="Kid">Kid's Bedroom</option>
+            <option value="Study">Study Room</option>
+            <option value="Foyer">Foyer</option>
+            <option value="Balcony">Balcony</option>
+            <option value="WholeHouse">Whole House</option>
+        </select>
+        <label for="design-options">Select Design:</label>
+        <select id="design-options">
+            <option value="mid">Midcentury Modern design</option>
+            <option value="farm">Farmhouse Design</option>
+            <option value="coas">Coastal Design</option>
+            <option value="boho">Stylish Bohemian Design</option>
+            <option value="trad">Traditional Design</option>
+            <option value="scan">Scandinavian Design</option>
+            <option value="mini">Minimalist Design</option>
+    
+        </select>
+        <br>
+        <br>
+        <button onclick="validateAndCalculateQuote()">GET ESTIMATE</button>
+        <div id="quote-result"></div>
+    </div>
+    
+    <script>
+        function validateAndCalculateQuote() {
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const propertyType = document.getElementById("property-type").value;
+            const roomOptions = document.getElementById("room-options").selectedOptions;
+            const selectedDesign = document.getElementById("design-options").value;
+    
+            if (!name || !email || !isValidEmail(email)) {
+                nameInput.classList.add("invalid");
+                emailInput.classList.add("invalid");
+    
+                alert("Please enter a valid name and email address.");
+                return;
+            }
+    
+            nameInput.classList.remove("invalid");
+            emailInput.classList.remove("invalid");
+    
+            let totalCost = calculateCombinedCost(propertyType, roomOptions, selectedDesign);
+    
+            document.getElementById("quote-result").textContent = `Estimated Quote for ${name} - ${propertyType} with ${roomOptions.length} room(s) and ${selectedDesign} design: $${totalCost}`;
+        }
+    
+        function calculateCombinedCost(propertyType, selectedRooms, selectedDesign) {
+            let roomCost = 0;
+            selectedRooms = Array.from(selectedRooms); // Convert selectedOptions to an array
+    
+            selectedRooms.forEach((room) => {
+                switch (propertyType) {
+                    case "1BHK":
+                        roomCost += getRoomCost1BHK(room.value);
+                        break;
+                    case "2BHK":
+                        roomCost += getRoomCost2BHK(room.value);
+                        break;
+                    case "3BHK":
+                        roomCost += getRoomCost3BHK(room.value);
+                        break;
+                    case "4BHK":
+                        roomCost += getRoomCost4BHK(room.value);
+                        break;
+                    case "Villa":
+                        roomCost += getRoomCostVilla(room.value);
+                        break;
+                }
+            });
+    
+            const designCost = getDesignCost(selectedDesign);
+    
+            return roomCost + designCost;
+        }
+    
+        function getDesignCost(design) {
+            switch (design) {
+                case "mid":
+                    return 25000;
+                case "farm":
+                    return 25000;
+                case "coas":
+                    return 35000;
+                case "boho":
+                    return 45000;
+                case "trad":
+                    return 25000;
+                case "scan":
+                    return 45000;
+                case "mini":
+                    return 35000;
+               
+                default:
+                    return 0;
+            }
+        }
+    
+        function getRoomCost1BHK(room) {
+                switch (room) {
+                    case "Kitchen":
+                        return 15000;
+                    case "Bedroom":
+                        return 15000;
+                    case "LivingRoom":
+                        return 20000;
+                    case "Bathroom":
+                        return 10000;
+                    case "Kid":
+                        return 10000;
+                    case "Study":
+                        return 10000;
+                    case "Foyer":
+                        return 10000;
+                    case "Balcony":
+                        return 10000;
+                    case "WholeHouse":
+                        return 200000;
+                    default:
+                        return 0;
+                }
+            }
+    
+            function getRoomCost2BHK(room) {
+                switch (room) {
+                    case "Kitchen":
+                        return 15000;
+                    case "Bedroom":
+                        return 25000;
+                    case "LivingRoom":
+                        return 25000;
+                    case "Bathroom":
+                        return 15000;
+                    case "Kid":
+                        return 15000;
+                    case "Study":
+                        return 15000;
+                    case "Foyer":
+                        return 15000;
+                    case "Balcony":
+                        return 15000;
+                    case "WholeHouse":
+                        return 250000;
+                    default:
+                        return 0;
+                }
+            }
+    
+            function getRoomCost3BHK(room) {
+                switch (room) {
+                    case "Kitchen":
+                        return 20000;
+                    case "Bedroom":
+                        return 25000;
+                    case "LivingRoom":
+                        return 30000;
+                    case "Bathroom":
+                        return 20000;
+                    case "Kid":
+                        return 20000;
+                    case "Study":
+                        return 20000;
+                    case "Foyer":
+                        return 20000;
+                    case "Balcony":
+                        return 20000;
+                    case "WholeHouse":
+                        return 350000;
+                    default:
+                        return 0;
+                }
+            }
+    
+            function getRoomCost4BHK(room) {
+                switch (room) {
+                    case "Kitchen":
+                        return 30000;
+                    case "Bedroom":
+                        return 25000;
+                    case "LivingRoom":
+                        return 30000;
+                    case "Bathroom":
+                        return 20000;
+                    case "Kid":
+                        return 20000;
+                    case "Study":
+                        return 20000;
+                    case "Foyer":
+                        return 20000;
+                    case "Balcony":
+                        return 20000;
+                    case "WholeHouse":
+                        return 350000;
+                    default:
+                        return 0;
+                }
+            }
+            
+            
+    
+            function getRoomCostVilla(room) {
+                switch (room) {
+                    case "Kitchen":
+                        return 10000;
+                    case "Bedroom":
+                        return 11000;
+                    case "LivingRoom":
+                        return 8000;
+                    case "Bathroom":
+                        return 5000;
+                    case "WholeHouse":
+                        return 30000;
+                    default:
+                        return 0;
+                }
+        }
+    
+        function isValidEmail(email) {
+            // Simple email validation using regular expression
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+    </script>
+    </body>
+    </html>
+    
