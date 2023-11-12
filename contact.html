@@ -130,7 +130,7 @@ function validate(){
   
   var text;
   if(name.length < 5){
-    text = "Name should contain atleast 5 characters";
+    text = "Please enter your username(with atleast 5 alphabet characters)";
     error_message.innerHTML = text;
     return false;
   }
@@ -140,12 +140,12 @@ function validate(){
     return false;
   }
   if(isNaN(phone) || phone.length != 10){
-    text = "Enter valid Phone Number";
+    text = "Please enter your 10-digit phone number";
     error_message.innerHTML = text;
     return false;
   }
   if(email.indexOf("@") == -1 || email.length < 6){
-    text = "Emailshould contain @";
+    text = "Please enter a valid email address";
     error_message.innerHTML = text;
     return false;
   }
@@ -155,11 +155,11 @@ function validate(){
     return false;
   }
   if(message.length <= 10){
-    text = "Please Enter More Than 10 Characters";
+    text = "Please Enter Your Message With More Than 10 Characters";
     error_message.innerHTML = text;
     return false;
   }
-  alert("Form Submitted Successfully!");
+  alert("Form Submitted Successfully!Thank you");
   return true;
 }
 
