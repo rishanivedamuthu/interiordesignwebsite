@@ -139,7 +139,7 @@
     
             let totalCost = calculateCombinedCost(propertyType, roomOptions, selectedDesign);
     
-            document.getElementById("quote-result").textContent = `Estimated Quote for ${name} - ${propertyType} with ${roomOptions.length} room(s) and ${selectedDesign} design: $${totalCost}`;
+            document.getElementById("quote-result").textContent = `Estimated Quote for ${name} - ${propertyType} with ${roomOptions.length} room(s) and ${selectedDesign} design: ${totalCost}`;
         }
     
         function calculateCombinedCost(propertyType, selectedRooms, selectedDesign) {
